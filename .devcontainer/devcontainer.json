@@ -1,0 +1,30 @@
+{
+	"name": "docker-m1-development",
+	"image": "mrlesmithjr/docker-m1-development",
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+		"source=git-projects,target=/home/vscode/Git_Projects,type=volume",
+		"source=playground,target=/home/vscode/Playground,type=volume",
+		"source=projectname-bashhistory,target=/commandhistory,type=volume",
+		"source=projects,target=/home/vscode/Projects,type=volume",
+	],
+	"postAttachCommand": "sudo chown -h vscode:root /var/run/docker.sock",
+	"remoteUser": "vscode",
+	"runArgs": [
+		"-v",
+		"${localEnv:HOME}/.ssh:/home/vscode/.ssh:rw"
+	],
+	"settings": {},
+	"extensions": [
+		"github.vscode-pull-request-github",
+		"eamodio.gitlens",
+		"davidanson.vscode-markdownlint",
+		"redhat.ansible",
+		"hashicorp.terraform",
+		"foxundermoon.shell-format",
+		"timonwong.shellcheck",
+		"redhat.vscode-yaml",
+		"ms-azuretools.vscode-docker",
+		"njpwerner.autodocstring"
+	]
+}
