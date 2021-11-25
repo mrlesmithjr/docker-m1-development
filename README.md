@@ -3,17 +3,6 @@
 Just a little repo I am putting together as I transition to using an Apple M1 Pro for
 development, etc. For now, my intent is to make a switch to a [VSCode Development Container](https://code.visualstudio.com/docs/remote/containers).
 
-> NOTE: This will also work on non-Apple M1
-
-## Docker Images
-
-By default, I am using my own personal [Dockerfiles](https://github.com/mrlesmithjr/dockerfiles)
-to build from.
-
-## Docker Hub
-
-You can consume this image from Docker hub as `mrlesmithjr/docker-m1-development`.
-
 ## Docker Management
 
 The Docker CLI utils are installed within the container and `/var/run/docker.sock` is
@@ -38,6 +27,10 @@ vsc-docker-m1-development-a43f11da8205683013f00548b1727037   latest    ceb1f3a42
 ```
 
 ## Usage
+
+## Build Source
+
+You can find the build source for this [here](https://github.com/mrlesmithjr/docker-m1-development-src).
 
 ## Licensing
 
