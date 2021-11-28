@@ -196,6 +196,25 @@ cython_debug/
 ### Vagrant Patch ###
 *.box
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# Support for Project snippet scope
+!.vscode/*.code-snippets
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -221,3 +240,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+*.deb
