@@ -7,7 +7,7 @@ TFENV_TERRAFORM_VERSION="1.0.11"
 
 sudo apt-get update -y
 sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates \
-    git-lfs golang iputils-ping jq libcap2-bin nmap npm ruby ruby-dev shellcheck \
+    git-lfs golang iputils-ping jq less libcap2-bin nmap npm ruby ruby-dev shellcheck \
     software-properties-common sshpass tmux unzip
 
 if [ ! -f "${HOME}/.terraform-version" ]; then
@@ -49,3 +49,7 @@ if ! command -v docker-compose &>/dev/null; then
         -L "https://raw.githubusercontent.com/docker/compose/${DOCKER_COMPOSE_VERSION}/contrib/completion/bash/docker-compose" \
         -o /etc/bash_completion.d/docker-compose
 fi
+
+# FIXME - Add to Python dev reqs in dotfiles. Had issues with dependencies originally.
+# https://github.com/mrlesmithjr/dotfiles
+pip3 install ansible-lint yamllint
