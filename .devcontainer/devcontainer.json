@@ -1,6 +1,6 @@
 {
 	"name": "docker-m1-development",
-	"image": "mrlesmithjr/docker-m1-development",
+	"image": "mrlesmithjr/docker-m1-development:arm64",
 	"mounts": [
 		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
 		"source=${localEnv:HOME}/.kube,target=/home/vscode/.kube,type=bind,consistency=cached",
