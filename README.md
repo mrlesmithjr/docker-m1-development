@@ -28,6 +28,25 @@ vsc-docker-m1-development-a43f11da8205683013f00548b1727037   latest    ceb1f3a42
 
 ## Usage
 
+### Docker Image(s)
+
+The default image defined in [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
+is `mrlesmithjr/docker-m1-development:arm64` but, you can also change this to `mrlesmithjr/docker-m1-development:amd64` for `X86` environments. The intent is for developing on Apple
+M1, but you have flexibility based on your needs.
+
+### Additional Configs
+
+You can find pre-defined scripts in [config/](config/) for installing additional tools,
+etc. These are meant to not be included in the default base image and only used if
+desired.
+
+### Mounts
+
+Some pre-defined mounts are added to [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
+but, you can modify these as needed. The defaults are likely not present on your
+computer which will cause errors, but you can add these in your home directory or remove
+them from the config.
+
 ## Build Source
 
 You can find the build source for this [here](https://github.com/mrlesmithjr/docker-m1-development-src).
