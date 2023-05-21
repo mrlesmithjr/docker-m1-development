@@ -10,8 +10,9 @@
     "source=projectname-bashhistory,target=/commandhistory,type=volume"
   ],
   "postAttachCommand": "sudo chown -h vscode:root /var/run/docker.sock",
+  "postStartCommand": "",
   "remoteUser": "vscode",
-  "runArgs": ["-v", "${localEnv:HOME}/.ssh:/home/vscode/.ssh:rw"],
+  "runArgs": [],
   "customizations": {
     "vscode": {
       "extensions": [
