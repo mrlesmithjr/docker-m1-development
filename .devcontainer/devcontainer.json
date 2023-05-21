@@ -1,33 +1,33 @@
 {
-	"name": "docker-m1-development",
-	"image": "mrlesmithjr/docker-m1-development:arm64",
-	"mounts": [
-		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
-		"source=${localEnv:HOME}/.kube,target=/home/vscode/.kube,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/Git_Projects,target=/home/vscode/Git_Projects,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/Playground,target=/home/vscode/Playground,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/Projects,target=/home/vscode/Projects,type=bind,consistency=cached",
-		"source=projectname-bashhistory,target=/commandhistory,type=volume",
-	],
-	"postAttachCommand": "sudo chown -h vscode:root /var/run/docker.sock",
-	"remoteUser": "vscode",
-	"runArgs": [
-		"-v",
-		"${localEnv:HOME}/.ssh:/home/vscode/.ssh:rw"
-	],
-	"settings": {},
-	"extensions": [
-		"github.vscode-pull-request-github",
-		"eamodio.gitlens",
-		"davidanson.vscode-markdownlint",
-		"redhat.ansible",
-		"hashicorp.terraform",
-		"foxundermoon.shell-format",
-		"timonwong.shellcheck",
-		"redhat.vscode-yaml",
-		"ms-azuretools.vscode-docker",
-		"njpwerner.autodocstring",
-		"felipecaputo.git-project-manager",
-		"gitlab.gitlab-workflow"
-	]
+  "name": "docker-m1-development",
+  "image": "mrlesmithjr/docker-m1-development:arm64",
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=${localEnv:HOME}/.kube,target=/home/vscode/.kube,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/Git_Projects,target=/home/vscode/Git_Projects,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/Playground,target=/home/vscode/Playground,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/Projects,target=/home/vscode/Projects,type=bind,consistency=cached",
+    "source=projectname-bashhistory,target=/commandhistory,type=volume"
+  ],
+  "postAttachCommand": "sudo chown -h vscode:root /var/run/docker.sock",
+  "remoteUser": "vscode",
+  "runArgs": ["-v", "${localEnv:HOME}/.ssh:/home/vscode/.ssh:rw"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "redhat.ansible",
+        "ms-python.python",
+        "foxundermoon.shell-format",
+        "redhat.vscode-yaml",
+        "timonwong.shellcheck",
+        "ms-python.vscode-pylance",
+        "ms-python.flake8",
+        "eamodio.gitlens",
+        "DavidAnson.vscode-markdownlint",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {}
+    }
+  }
 }

@@ -2,13 +2,11 @@
 
 set -e
 
-DOCKER_COMPOSE_VERSION="v2.1.1"
-TFENV_TERRAFORM_VERSION="1.0.11"
+DOCKER_COMPOSE_VERSION="v2.18.1"
+TFENV_TERRAFORM_VERSION="1.4.6"
 
 sudo apt-get update -y
-sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates \
-    git-lfs golang iputils-ping jq less libcap2-bin nmap npm ruby ruby-dev shellcheck \
-    software-properties-common sshpass tmux unzip
+sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates curl git-lfs golang iputils-ping jq less libcap2-bin nmap npm ruby ruby-dev shellcheck software-properties-common sshpass tmux unzip
 
 if [ ! -f "${HOME}/.terraform-version" ]; then
     echo "${TFENV_TERRAFORM_VERSION}" >"${HOME}/.terraform-version"
@@ -21,8 +19,14 @@ if [ ! -f "$HOME/.tfenv/bin/tfenv" ]; then
     tfenv use ${TFENV_TERRAFORM_VERSION}
 fi
 
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+if [ ! -d /etc/apt/keyrings ]; then
+    sudo mkdir /etc/apt/keyrings
+fi
+
+sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://dl.k8s.io/apt/doc/apt-key.gpg
+
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
 sudo apt-get update -y
 sudo apt-get install -y --no-install-recommends kubectl
 
