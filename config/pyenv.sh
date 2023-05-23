@@ -1,4 +1,5 @@
 #!/bin/bash
+# Install Pyenv - Useful if you wipe out your ~/.pyenv environment
 
 set -e
 

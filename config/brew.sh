@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Installs Homebrew except on aarch64 platforms because it is not supported
+
 set -e
 
 if [[ $(arch) != "aarch64" ]]; then

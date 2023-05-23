@@ -1,4 +1,5 @@
 #!/bin/bash
+# Easily update dotfiles from https://github.com/mrlesmithjr/dotfiles to ensure we have the latest
 
 set -e
 

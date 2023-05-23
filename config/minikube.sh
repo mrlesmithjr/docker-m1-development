@@ -1,4 +1,5 @@
 #!/bin/bash
+# Install Minikube to deploy K8s within this development environment
 
 set -e
 
