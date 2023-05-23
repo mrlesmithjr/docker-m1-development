@@ -241,4 +241,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Exclude any Debian packages downloaded within devcontainer
 *.deb
